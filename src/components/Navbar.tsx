@@ -1,3 +1,5 @@
+"use client"
+
 import React from 'react'
 import Link from 'next/link';
 import { FiMenu } from "react-icons/fi";
@@ -6,12 +8,14 @@ import Logo from './Logo';
 const Navbar = () => {
   const navigation = [
     {title:"Home",href:"/"},
-    {title:"Features",href:"/features"},
     {title:"About",href:"/about"},
+    {title:"Training",href:"/training"},
     {title:"Connect",href:"/connect"},
-    {title:"Trainings",href:"/training"},
 
   ]
+  const handleClick = ()=>{
+    console.log("Button Clicked")
+  }
 
   return (
     <div className="w-full bg-white/70 h-20 shadow-md sticky top-0 backdrop-blur-2xl transition-colors z-50">
@@ -29,9 +33,11 @@ const Navbar = () => {
             </Link>
           ))}
         </div>
-        <div className="md:hidden">
+        <button
+        onClick={()=>handleClick()}
+        className="md:hidden">
           <FiMenu className="text-2xl" />
-        </div>
+        </button>
       </div>
     </div>
   );
